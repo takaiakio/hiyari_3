@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-l$@l9$%fid#ei01=txx5)!w^&c@22ypl0*w9zzy^s*b1k0xgm6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hiyari-3.onrender.com']
+ALLOWED_HOSTS = ['hiyari-3.onrender.com','127.0.0.1']
 
 
 # Application definition
@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'hiyarihatto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hiyarihatto_db',  # 作成したデータベース名
-        'USER': 'hiyarihatto_user',  # MySQLのユーザー名
-        'PASSWORD': 'password123',  # MySQLのパスワード
-        'HOST': 'localhost',  # データベースホスト
-        'PORT': '3306',  # MySQLのデフォルトポート
+        'NAME': 'hiyarihatto_db',
+        'USER': 'hiyarihatto_user',
+        'PASSWORD': 'password123',
+        'HOST': '127.0.0.1',  # or use the actual IP or hostname
+        'PORT': '3306',  # Default MySQL port
     }
 }
 
