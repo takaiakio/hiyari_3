@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-l$@l9$%fid#ei01=txx5)!w^&c@22ypl0*w9zzy^s*b1k0xgm6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hiyari-3.onrender.com']
 
 
 # Application definition
@@ -80,10 +81,15 @@ WSGI_APPLICATION = 'hiyarihatto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hiyarihatto_db',  # 作成したデータベース名
+        'USER': 'hiyarihatto_user',  # MySQLのユーザー名
+        'PASSWORD': 'password123',  # MySQLのパスワード
+        'HOST': 'localhost',  # データベースホスト
+        'PORT': '3306',  # MySQLのデフォルトポート
     }
 }
+
 
 
 # Password validation
