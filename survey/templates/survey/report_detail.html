@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>レポート詳細</title>
+</head>
+<body>
+    <h1>{{ report.title }}</h1>
+    <p>{{ report.description }}</p>
+    <p>遭遇頻度: {{ report.frequency }}</p>
+    <p>ミス回避策: {{ report.mitigation }}</p>
+    <a href="{% url 'report_list' %}">一覧に戻る</a>
+</body>
+</html>

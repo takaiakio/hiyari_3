@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>削除確認</title>
+</head>
+<body>
+    <h1>"{{ report.title }}" を削除してもよろしいですか？</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">削除する</button>
+    </form>
+    <a href="{% url 'report_list' %}">キャンセル</a>
+</body>
+</html>
