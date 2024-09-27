@@ -79,14 +79,21 @@ WSGI_APPLICATION = 'hiyarihatto.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+'''DATABASES = {
+    'default': dj_database_url.config(  
+        default=os.getenv('postgresql://hiyari_db_user:qwXrTQDKm8uLtnLRFzp76L0JAJOi7zZg@dpg-crquubl6l47c73caj4ug-a/hiyari_db'),
+        engine='django.db.backends.postgresql'  # ここでエンジンを指定
+    )
+}'''
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hiyarihatto_db',
-        'USER': 'hiyarihatto_user',
-        'PASSWORD': 'password123',
-        'HOST': '127.0.0.1',  # or use the actual IP or hostname
-        'PORT': '3306',  # Default MySQL port
+        'ENGINE': 'django.db.backends.postgresql',  # PostgreSQLエンジンを指定
+        'NAME': os.getenv('hiyari_db'),              # データベース名
+        'USER': os.getenv('hiyari_db_user'),              # ユーザー名
+        'PASSWORD': os.getenv('qwXrTQDKm8uLtnLRFzp76L0JAJOi7zZg'),      # パスワード
+        'HOST': os.getenv('dpg-crquubl6l47c73caj4ug-a'),              # ホスト
+        'PORT': os.getenv('DB_PORT', '5432'),      # ポート番号（デフォルトは5432）
     }
 }
 
