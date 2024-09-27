@@ -79,14 +79,14 @@ WSGI_APPLICATION = 'hiyarihatto.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
     'default': dj_database_url.config(
         default=os.getenv('DATABASE_URL'),
         conn_max_age=600,  # 接続を効率的に再利用するために設定
     )
-}
+}'''
 
-'''DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',  # PostgreSQLエンジン
         'NAME': os.getenv('DB_NAME'),         # データベース名
@@ -95,7 +95,7 @@ DATABASES = {
         'HOST': os.getenv('DB_HOST'),         # ホスト名
         'PORT': os.getenv('DB_PORT', '5432'), # ポート番号（デフォルトは5432）
     }
-}'''
+}
 
 
 
